@@ -14,7 +14,6 @@
             color: #ffffff;
             width: 100%;
             height: 100%;
-            overflow: hidden;
         }
         .container {
             width: 100%;
@@ -104,19 +103,11 @@
             }
         }
 
-        @keyframes jelly {
-            0%, 100% {
-                transform: scale(1, 1);
-            }
-            25% {
-                transform: scale(1.1, 0.9);
-            }
-            50% {
-                transform: scale(0.9, 1.1);
-            }
-            75% {
-                transform: scale(1.05, 0.95);
-            }
+        .background-education {
+            background-image: url('https://example.com/education-background.jpg'); /* replace with the actual URL of the background image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
         }
     </style>
 </head>
@@ -128,7 +119,7 @@
             <p>Cochin University of Science and Technology (CUSAT), Kochi</p>
         </header>
 
-        <section>
+        <section class="background-education">
             <h2>About Me</h2>
             <p class="section-content">I am a passionate student currently pursuing B.Tech in Electronics and Communication Engineering at CUSAT. With a keen interest in C programming, I aim to become proficient in problem-solving and contribute to tech innovations. I strive for continuous learning and personal growth in both academic and extracurricular activities.</p>
         </section>
@@ -186,22 +177,5 @@
             </div>
         </section>
     </div>
-
-    <script>
-        document.addEventListener("mousemove", function (e) {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            document.body.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
-        });
-
-        document.querySelectorAll("section").forEach(section => {
-            section.addEventListener("mousemove", function () {
-                section.style.animation = "jelly 0.6s";
-                section.addEventListener("animationend", () => {
-                    section.style.animation = "";
-                });
-            });
-        });
-    </script>
 </body>
 </html>
