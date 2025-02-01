@@ -10,7 +10,8 @@
             margin: 0;
             padding: 0;
             font-family: 'DotGothic16', sans-serif;
-            transition: background-color 0.5s, color 0.5s;
+            background: #121212;
+            color: #ffffff;
         }
         .container {
             width: 80%;
@@ -28,6 +29,8 @@
         header h1 {
             margin: 0;
             font-size: 36px;
+            position: relative;
+            animation: glitch 1s infinite;
         }
         header p {
             margin: 10px 0;
@@ -39,6 +42,9 @@
             background: linear-gradient(to right, #1f1f1f, #3f3f3f);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: glitch 1s infinite;
         }
         section:hover {
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
@@ -50,6 +56,8 @@
             background: linear-gradient(to right, #00FF7F, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            position: relative;
+            animation: glitch 1s infinite;
         }
         .section-content {
             margin-left: 20px;
@@ -59,6 +67,7 @@
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+            position: relative;
         }
         .social-links a {
             display: inline-block;
@@ -93,22 +102,6 @@
             .container {
                 width: 95%;
             }
-        }
-
-        /* Light mode styles */
-        .light-mode {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .light-mode header {
-            background: linear-gradient(to right, #f0f0f0, #e0e0e0);
-            color: #000000;
-        }
-        .light-mode section {
-            background: linear-gradient(to right, #e0e0e0, #f0f0f0);
-        }
-        .light-mode .social-links a {
-            background: linear-gradient(45deg, #000000, #ffffff);
         }
 
         @keyframes glitch {
@@ -146,8 +139,6 @@
             <p>B.Tech in Electronics and Communication Engineering</p>
             <p>Cochin University of Science and Technology (CUSAT), Kochi</p>
         </header>
-
-        <button id="modeSwitch" onclick="toggleMode()">Switch Mode</button>
 
         <section>
             <h2>About Me</h2>
@@ -202,4 +193,10 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 </a>
                 <a href="https://x.com/hisnameisnira" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Twitter_X.png/640px-Twitter_X.png" alt="Twitter[_{{{CITATION{{{_1{](https://github.com/buribalazs/smooth-drag-order/tree/7b40d21d076c3e31765f61481f537beaf4c5ec9f/README.md)
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Twitter_X.png/640px-Twitter_X.png" alt="Twitter">
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
