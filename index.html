@@ -52,7 +52,6 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
         }
         section:hover {
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
@@ -113,20 +112,6 @@
                 flex: 100%;
             }
         }
-        @keyframes fall {
-            0% {
-                top: var(--start-top);
-                left: var(--start-left);
-            }
-            70% {
-                top: calc(100vh - 200px);
-                animation-timing-function: ease-out;
-            }
-            100% {
-                top: calc(100vh - 80px);
-                animation-timing-function: ease-in;
-            }
-        }
     </style>
 </head>
 <body>
@@ -139,13 +124,13 @@
 
         <div class="row">
             <div class="column">
-                <section>
+                <section id="about">
                     <h2>About Me</h2>
                     <p class="section-content">I am a passionate student currently pursuing B.Tech in Electronics and Communication Engineering at CUSAT. With a keen interest in C programming, I aim to become proficient in problem-solving and contribute to tech innovations. I strive for continuous learning and personal growth in both academic and extracurricular activities.</p>
                 </section>
             </div>
             <div class="column">
-                <section>
+                <section id="education">
                     <h2>Education</h2>
                     <p class="section-content"><strong>2024 - Present:</strong> B.Tech in Electronics and Communication Engineering, CUSAT, Kochi</p>
                 </section>
@@ -154,7 +139,7 @@
 
         <div class="row">
             <div class="column">
-                <section>
+                <section id="skills">
                     <h2>Skills</h2>
                     <div class="section-content">
                         <ul>
@@ -169,7 +154,7 @@
                 </section>
             </div>
             <div class="column">
-                <section>
+                <section id="projects">
                     <h2>Projects</h2>
                     <div class="section-content">
                         <ul>
@@ -184,13 +169,13 @@
 
         <div class="row">
             <div class="column">
-                <section>
+                <section id="contact">
                     <h2>Contact</h2>
                     <p class="section-content">Email: <a href="mailto:nrkollikkara@gmail.com" style="color: #00FF7F;">nrkollikkara@gmail.com</a></p>
                 </section>
             </div>
             <div class="column">
-                <section>
+                <section id="social-links">
                     <h2>Social Links</h2>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/niranjan-kollikkara-r-6ab810327/" target="_blank">
@@ -212,15 +197,23 @@
     </div>
 
     <script>
-        document.querySelectorAll('section').forEach(section => {
-            section.addEventListener('click', function () {
-                const rect = section.getBoundingClientRect();
-                section.style.setProperty('--start-top', `${rect.top}px`);
-                section.style.setProperty('--start-left', `${rect.left}px`);
-                section.style.position = 'absolute';
-                section.style.top = `${rect.top}px`;
-                section.style.left = `${rect.left}px`;
-                section.style.animation = 'fall 2s forwards';
+        window.addEventListener('deviceorientation', function (event) {
+            const sections = document.querySelectorAll('section');
+            const tiltX = event.beta;  // In degree in the range [-180,180]
+            const tiltY = event.gamma; // In degree in the range [-90,90]
+            
+            sections.forEach(section => {
+                section.style.transform = `translate(${tiltY}px, ${tiltX}px)`;
+            });
+        });
+
+        window.addEventListener('devicemotion', function (event) {
+            const sections = document.querySelectorAll('section');
+            const acceleration = event.accelerationIncludingGravity;
+            const shakeIntensity = Math.sqrt(acceleration.x ** 2 + acceleration.y ** 2 + acceleration.z ** 2);
+            
+            sections.forEach(section => {
+                section.style.transform = `translate(${shakeIntensity * 2}px, ${shakeIntensity * 2}px)`;
             });
         });
     </script>
