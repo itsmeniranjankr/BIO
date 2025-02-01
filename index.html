@@ -124,13 +124,13 @@
 
         <div class="row">
             <div class="column">
-                <section id="about">
+                <section>
                     <h2>About Me</h2>
                     <p class="section-content">I am a passionate student currently pursuing B.Tech in Electronics and Communication Engineering at CUSAT. With a keen interest in C programming, I aim to become proficient in problem-solving and contribute to tech innovations. I strive for continuous learning and personal growth in both academic and extracurricular activities.</p>
                 </section>
             </div>
             <div class="column">
-                <section id="education">
+                <section>
                     <h2>Education</h2>
                     <p class="section-content"><strong>2024 - Present:</strong> B.Tech in Electronics and Communication Engineering, CUSAT, Kochi</p>
                 </section>
@@ -139,7 +139,7 @@
 
         <div class="row">
             <div class="column">
-                <section id="skills">
+                <section>
                     <h2>Skills</h2>
                     <div class="section-content">
                         <ul>
@@ -154,7 +154,7 @@
                 </section>
             </div>
             <div class="column">
-                <section id="projects">
+                <section>
                     <h2>Projects</h2>
                     <div class="section-content">
                         <ul>
@@ -169,13 +169,13 @@
 
         <div class="row">
             <div class="column">
-                <section id="contact">
+                <section>
                     <h2>Contact</h2>
                     <p class="section-content">Email: <a href="mailto:nrkollikkara@gmail.com" style="color: #00FF7F;">nrkollikkara@gmail.com</a></p>
                 </section>
             </div>
             <div class="column">
-                <section id="social-links">
+                <section>
                     <h2>Social Links</h2>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/niranjan-kollikkara-r-6ab810327/" target="_blank">
@@ -195,27 +195,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        window.addEventListener('deviceorientation', function (event) {
-            const sections = document.querySelectorAll('section');
-            const tiltX = event.beta;  // In degree in the range [-180,180]
-            const tiltY = event.gamma; // In degree in the range [-90,90]
-            
-            sections.forEach(section => {
-                section.style.transform = `translate(${tiltY}px, ${tiltX}px)`;
-            });
-        });
-
-        window.addEventListener('devicemotion', function (event) {
-            const sections = document.querySelectorAll('section');
-            const acceleration = event.accelerationIncludingGravity;
-            const shakeIntensity = Math.sqrt(acceleration.x ** 2 + acceleration.y ** 2 + acceleration.z ** 2);
-            
-            sections.forEach(section => {
-                section.style.transform = `translate(${shakeIntensity * 2}px, ${shakeIntensity * 2}px)`;
-            });
-        });
-    </script>
 </body>
 </html>
