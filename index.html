@@ -18,6 +18,16 @@
             margin: 0 auto;
             padding: 20px;
         }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+        .column {
+            flex: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
         header {
             background: linear-gradient(to right, #0f0f0f, #1f1f1f);
             color: #ffffff;
@@ -29,45 +39,39 @@
         header h1 {
             margin: 0;
             font-size: 36px;
-            position: relative;
-            animation: glitch 1s infinite;
         }
         header p {
             margin: 10px 0;
             font-size: 18px;
         }
         section {
-            margin: 20px 0;
-            padding: 20px;
             background: linear-gradient(to right, #1f1f1f, #3f3f3f);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
             position: relative;
-            animation: glitch 1s infinite;
+            overflow: hidden;
         }
         section:hover {
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
             transform: scale(1.02);
         }
         section h2 {
-            margin-top: 0;
+            margin: 0;
             font-size: 28px;
+            padding: 20px;
             background: linear-gradient(to right, #00FF7F, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            animation: glitch 1s infinite;
         }
         .section-content {
-            margin-left: 20px;
+            padding: 20px;
         }
         .social-links {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
-            position: relative;
         }
         .social-links a {
             display: inline-block;
@@ -102,32 +106,8 @@
             .container {
                 width: 95%;
             }
-        }
-
-        @keyframes glitch {
-            0% {
-                transform: skew(0deg);
-                text-shadow: 2px 2px #ff0000, -2px -2px #0000ff;
-            }
-            20% {
-                transform: skew(1deg);
-                text-shadow: -2px 2px #00ff00, 2px -2px #ff0000;
-            }
-            40% {
-                transform: skew(-1deg);
-                text-shadow: 2px -2px #0000ff, -2px 2px #00ff00;
-            }
-            60% {
-                transform: skew(0.5deg);
-                text-shadow: -2px -2px #ff0000, 2px 2px #0000ff;
-            }
-            80% {
-                transform: skew(-0.5deg);
-                text-shadow: 2px 2px #00ff00, -2px -2px #ff0000;
-            }
-            100% {
-                transform: skew(0deg);
-                text-shadow: -2px 2px #0000ff, 2px -2px #00ff00;
+            .column {
+                flex: 100%;
             }
         }
     </style>
@@ -140,63 +120,78 @@
             <p>Cochin University of Science and Technology (CUSAT), Kochi</p>
         </header>
 
-        <section>
-            <h2>About Me</h2>
-            <p class="section-content">I am a passionate student currently pursuing B.Tech in Electronics and Communication Engineering at CUSAT. With a keen interest in C programming, I aim to become proficient in problem-solving and contribute to tech innovations. I strive for continuous learning and personal growth in both academic and extracurricular activities.</p>
-        </section>
-
-        <section>
-            <h2>Education</h2>
-            <p class="section-content"><strong>2024 - Present:</strong> B.Tech in Electronics and Communication Engineering, CUSAT, Kochi</p>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <div class="section-content">
-                <ul>
-                    <li>C Programming - Completed course from GTech Institute</li>
-                    <li>C++ Programming - Completed course from GTech Institute</li>
-                    <li>AI - Completed GEN101 AI course with the help of Pieces AI</li>
-                    <li>Embedded Systems</li>
-                    <li>Problem Solving</li>
-                    <li>Data Structures and Algorithms</li>
-                </ul>
+        <div class="row">
+            <div class="column">
+                <section>
+                    <h2>About Me</h2>
+                    <p class="section-content">I am a passionate student currently pursuing B.Tech in Electronics and Communication Engineering at CUSAT. With a keen interest in C programming, I aim to become proficient in problem-solving and contribute to tech innovations. I strive for continuous learning and personal growth in both academic and extracurricular activities.</p>
+                </section>
             </div>
-        </section>
-
-        <section>
-            <h2>Projects</h2>
-            <div class="section-content">
-                <ul>
-                    <li><strong>BMS in C:</strong> A basic Battery Management System project developed in C.</li>
-                    <li><strong>BMI Calculator:</strong> A simple Body Mass Index (BMI) calculator developed in C.</li>
-                    <li><strong>GitHub Projects:</strong> Continuously working on various projects, available on my GitHub profile.</li>
-                </ul>
+            <div class="column">
+                <section>
+                    <h2>Education</h2>
+                    <p class="section-content"><strong>2024 - Present:</strong> B.Tech in Electronics and Communication Engineering, CUSAT, Kochi</p>
+                </section>
             </div>
-        </section>
+        </div>
 
-        <section>
-            <h2>Contact</h2>
-            <p class="section-content">Email: <a href="mailto:nrkollikkara@gmail.com" style="color: #00FF7F;">nrkollikkara@gmail.com</a></p>
-        </section>
-
-        <section>
-            <h2>Social Links</h2>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/niranjan-kollikkara-r-6ab810327/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/LinkedIn_logo_In-Red.png/640px-LinkedIn_logo_In-Red.png" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/itsmeniranjankr" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="GitHub">
-                </a>
-                <a href="https://www.instagram.com/its_niranjan_kr/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-                </a>
-                <a href="https://x.com/hisnameisnira" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Twitter_X.png/640px-Twitter_X.png" alt="Twitter">
-                </a>
+        <div class="row">
+            <div class="column">
+                <section>
+                    <h2>Skills</h2>
+                    <div class="section-content">
+                        <ul>
+                            <li>C Programming - Completed course from GTech Institute</li>
+                            <li>C++ Programming - Completed course from GTech Institute</li>
+                            <li>AI - Completed GEN101 AI course with the help of Pieces AI</li>
+                            <li>Embedded Systems</li>
+                            <li>Problem Solving</li>
+                            <li>Data Structures and Algorithms</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-        </section>
+            <div class="column">
+                <section>
+                    <h2>Projects</h2>
+                    <div class="section-content">
+                        <ul>
+                            <li><strong>BMS in C:</strong> A basic Battery Management System project developed in C.</li>
+                            <li><strong>BMI Calculator:</strong> A simple Body Mass Index (BMI) calculator developed in C.</li>
+                            <li><strong>GitHub Projects:</strong> Continuously working on various projects, available on my GitHub profile.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <section>
+                    <h2>Contact</h2>
+                    <p class="section-content">Email: <a href="mailto:nrkollikkara@gmail.com" style="color: #00FF7F;">nrkollikkara@gmail.com</a></p>
+                </section>
+            </div>
+            <div class="column">
+                <section>
+                    <h2>Social Links</h2>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/niranjan-kollikkara-r-6ab810327/" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/LinkedIn_logo_In-Red.png/640px-LinkedIn_logo_In-Red.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/itsmeniranjankr" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="GitHub">
+                        </a>
+                        <a href="https://www.instagram.com/its_niranjan_kr/" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                        </a>
+                        <a href="https://x.com/hisnameisnira" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Twitter_X.png/640px-Twitter_X.png" alt="Twitter">
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
 </body>
 </html>
