@@ -17,6 +17,7 @@
             width: 80%;
             margin: 0 auto;
             padding: 20px;
+            box-sizing: border-box;
         }
         .row {
             display: flex;
@@ -103,12 +104,32 @@
         .social-links a:hover img {
             transform: translate(-50%, -50%) scale(1.1);
         }
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
+        }
         @media (max-width: 768px) {
             .container {
-                width: 95%;
+                width: 100%;
+                padding: 10px;
             }
             .column {
                 flex: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+            header p {
+                font-size: 16px;
+            }
+            section h2 {
+                font-size: 24px;
+            }
+            .section-content {
+                padding: 10px;
             }
         }
     </style>
