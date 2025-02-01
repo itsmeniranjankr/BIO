@@ -29,6 +29,8 @@
         header h1 {
             margin: 0;
             font-size: 36px;
+            position: relative;
+            animation: glitch 1s infinite;
         }
         header p {
             margin: 10px 0;
@@ -41,6 +43,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
+            position: relative;
+            animation: glitch 1s infinite;
         }
         section:hover {
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
@@ -52,6 +56,8 @@
             background: linear-gradient(to right, #00FF7F, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            position: relative;
+            animation: glitch 1s infinite;
         }
         .section-content {
             margin-left: 20px;
@@ -95,6 +101,27 @@
         @media (max-width: 768px) {
             .container {
                 width: 95%;
+            }
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px red, -2px -2px blue;
+            }
+            20% {
+                text-shadow: -2px 2px red, 2px -2px blue;
+            }
+            40% {
+                text-shadow: 2px -2px red, -2px 2px blue;
+            }
+            60% {
+                text-shadow: -2px -2px red, 2px 2px blue;
+            }
+            80% {
+                text-shadow: 2px 2px red, -2px -2px blue;
+            }
+            100% {
+                text-shadow: -2px 2px red, 2px -2px blue;
             }
         }
     </style>
