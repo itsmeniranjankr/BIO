@@ -115,7 +115,8 @@
         }
         @keyframes fall {
             0% {
-                top: 0;
+                top: var(--start-top);
+                left: var(--start-left);
             }
             70% {
                 top: calc(100vh - 200px);
@@ -213,7 +214,12 @@
     <script>
         document.querySelectorAll('section').forEach(section => {
             section.addEventListener('click', function () {
+                const rect = section.getBoundingClientRect();
+                section.style.setProperty('--start-top', `${rect.top}px`);
+                section.style.setProperty('--start-left', `${rect.left}px`);
                 section.style.position = 'absolute';
+                section.style.top = `${rect.top}px`;
+                section.style.left = `${rect.left}px`;
                 section.style.animation = 'fall 2s forwards';
             });
         });
