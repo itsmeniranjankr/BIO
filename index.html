@@ -12,6 +12,7 @@
             font-family: 'DotGothic16', sans-serif;
             background: #121212;
             color: #ffffff;
+            overflow: hidden;
         }
         .container {
             width: 80%;
@@ -51,6 +52,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
         section:hover {
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
@@ -109,6 +111,19 @@
             }
             .column {
                 flex: 100%;
+            }
+        }
+        @keyframes fall {
+            0% {
+                top: 0;
+            }
+            70% {
+                top: calc(100vh - 200px);
+                animation-timing-function: ease-out;
+            }
+            100% {
+                top: calc(100vh - 80px);
+                animation-timing-function: ease-in;
             }
         }
     </style>
@@ -194,5 +209,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('section').forEach(section => {
+            section.addEventListener('click', function () {
+                section.style.position = 'absolute';
+                section.style.animation = 'fall 2s forwards';
+            });
+        });
+    </script>
 </body>
 </html>
