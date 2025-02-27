@@ -16,9 +16,10 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f7f9fc;
-            color: #333;
+            background-color: #1a1a1a;
+            color: #fff;
             line-height: 1.6;
+            overflow: hidden;
         }
 
         .container {
@@ -28,11 +29,58 @@
             padding-top: 50px;
         }
 
+        /* Intro Screen */
+        .intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            z-index: 1000;
+            overflow: hidden;
+            transform: scale(1); /* Initially full size */
+            transition: transform 1s ease-out, width 1s ease-out; /* Curtain effect */
+        }
+
+        .intro-screen .curtain-left,
+        .intro-screen .curtain-right {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #333;
+            z-index: 10;
+            transition: width 1s ease-out;
+        }
+
+        .intro-screen .curtain-left {
+            left: 0;
+            transform-origin: left center;
+        }
+
+        .intro-screen .curtain-right {
+            right: 0;
+            transform-origin: right center;
+        }
+
+        .intro-screen h1 {
+            font-size: 80px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+
+        /* Header styling */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #ff5e62;
+            background: linear-gradient(135deg, #4caf50, #2196f3); /* Green to Blue gradient */
             color: #fff;
             padding: 30px 40px;
             border-radius: 10px;
@@ -48,6 +96,7 @@
             font-size: 42px;
             font-weight: 700;
             margin-bottom: 10px;
+            color: #fff; /* White for Niranjan K R */
         }
 
         header .left p {
@@ -69,12 +118,14 @@
         .section-title {
             font-size: 24px;
             font-weight: 600;
-            color: #ff5e62;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-bottom: 3px solid #ff5e62;
+            border-bottom: 3px solid #ffffff;
             padding-bottom: 8px;
+            background: linear-gradient(135deg, #4caf50, #2196f3); /* Gradient for section titles */
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         .row {
@@ -85,11 +136,11 @@
 
         .column {
             flex: 1;
-            background-color: #fff;
+            background-color: #333;
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .column:hover {
@@ -107,7 +158,7 @@
         }
 
         .column ul li strong {
-            color: #ff5e62;
+            color: #4caf50; /* Green color for strong text */
         }
 
         .social-links {
@@ -129,7 +180,7 @@
         }
 
         .social-links a:hover {
-            background-color: #ff5e62;
+            background-color: #4caf50; /* Green color on hover */
             transform: scale(1.1);
         }
 
@@ -147,11 +198,11 @@
             text-align: center;
             margin-top: 50px;
             font-size: 14px;
-            color: #777;
+            color: #bbb;
         }
 
         footer a {
-            color: #ff5e62;
+            color: #4caf50; /* Green for footer links */
             text-decoration: none;
         }
 
@@ -210,6 +261,13 @@
 </head>
 
 <body>
+
+    <!-- Intro Screen -->
+    <div class="intro-screen">
+        <div class="curtain-left"></div>
+        <div class="curtain-right"></div>
+        <h1>NIRANJAN</h1>
+    </div>
 
     <div class="container">
 
@@ -309,6 +367,25 @@
         </footer>
 
     </div>
+
+    <script>
+        // Hide the intro screen with a curtain effect after 5 seconds
+        setTimeout(() => {
+            const curtainLeft = document.querySelector('.curtain-left');
+            const curtainRight = document.querySelector('.curtain-right');
+            const introScreen = document.querySelector('.intro-screen');
+
+            // Start the curtain effect by expanding the left and right curtains
+            curtainLeft.style.width = '10%';
+            curtainRight.style.width = '10%';
+
+            // After the transition, hide the intro screen entirely
+            setTimeout(() => {
+                introScreen.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Allow scrolling after intro
+            }, 2000); // Matches the duration of the transition
+        }, 200); // Fade after 5 seconds (slower intro duration)
+    </script>
 
 </body>
 
