@@ -1,163 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niranjan K R - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background: #f0f0f0; /* Light grey background */
-            color: #333; /* Dark grey text */
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
-            transition: all 0.3s ease;
         }
 
         .container {
             width: 80%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px;
-            box-sizing: border-box;
-            position: relative;
+            padding-top: 50px;
         }
 
         header {
-            background: linear-gradient(135deg, #FF7F50, #FF6347); /* Vibrant orange and coral gradient */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff5e62;
             color: #fff;
-            padding: 40px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px 40px;
+            border-radius: 10px;
             margin-bottom: 40px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        header:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        header .left {
+            flex-basis: 60%;
         }
 
-        header h1 {
-            margin: 0;
+        header .left h1 {
             font-size: 42px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        header p {
+        header .left p {
             font-size: 18px;
-            margin: 5px 0;
             font-weight: 400;
+        }
+
+        header .right {
+            text-align: right;
+        }
+
+        header .right img {
+            width: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ff5e62;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #ff5e62;
+            padding-bottom: 8px;
         }
 
         .row {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
         .column {
             flex: 1;
-            background: linear-gradient(135deg, #00C9FF, #92FE9D); /* Blue to Green gradient */
+            background-color: #fff;
+            border-radius: 10px;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease, color 0.3s ease;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .column:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            color: #fff;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .column h2 {
-            position: relative;
-            transition: all 0.3s ease;
+        .column ul {
+            list-style-type: none;
         }
 
-        .column h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #FF6347;
-            transition: width 0.3s ease;
-        }
-
-        .column:hover h2::after {
-            width: 100%;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        section h2 {
-            font-size: 24px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        section .section-content {
+        .column ul li {
             font-size: 16px;
-            font-weight: 400;
-            color: #555; /* Darker grey for text */
+            margin-bottom: 10px;
         }
 
-        .section-content ul {
-            padding-left: 20px;
+        .column ul li strong {
+            color: #ff5e62;
         }
 
         .social-links {
             display: flex;
-            justify-content: center;
-            align-items: center;
             gap: 20px;
             margin-top: 20px;
         }
 
         .social-links a {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background-color: #333;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .social-links a:hover {
-            background-color: #FF6347; /* Coral hover color */
+            background-color: #ff5e62;
             transform: scale(1.1);
         }
 
         .social-links a img {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             transition: transform 0.3s ease;
         }
 
@@ -165,33 +143,47 @@
             transform: scale(1.2);
         }
 
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        footer a {
+            color: #ff5e62;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 1024px) {
             .container {
                 width: 90%;
             }
+
+            header .left h1 {
+                font-size: 36px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .column {
+                padding: 20px;
+            }
         }
 
         @media (max-width: 768px) {
-            header h1 {
+            header .left h1 {
                 font-size: 32px;
             }
 
-            section h2 {
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 28px;
-            }
-
-            header p {
-                font-size: 14px;
-            }
-
-            section h2 {
-                font-size: 18px;
+            header .left p {
+                font-size: 16px;
             }
 
             .social-links {
@@ -199,29 +191,57 @@
                 align-items: center;
             }
         }
+
+        @media (max-width: 480px) {
+            header .left h1 {
+                font-size: 28px;
+            }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+            }
+
+            .column {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
+
 <body>
+
     <div class="container">
+
         <header>
-            <h1>Niranjan K R</h1>
-            <p>B.Tech in Electronics and Communication Engineering</p>
-            <p>Cochin University of Science and Technology (CUSAT), Kochi</p>
+            <div class="left">
+                <h1>Niranjan K R</h1>
+                <p>B.Tech in Electronics and Communication Engineering</p>
+                <p>Cochin University of Science and Technology (CUSAT), Kochi</p>
+            </div>
+            <div class="right">
+                <img src="https://via.placeholder.com/150" alt="Niranjan K R">
+            </div>
         </header>
 
         <div class="row">
             <div class="column">
                 <section>
-                    <h2>About Me</h2>
-                    <p class="section-content">I am a passionate student currently pursuing B.Tech in Electronics and Communication Engineering at CUSAT. With a keen interest in C programming, I aim to become proficient in problem-solving and contribute to tech innovations. I strive for continuous learning and personal growth in both academic and extracurricular activities.</p>
+                    <h2 class="section-title">About Me</h2>
+                    <p>I am a passionate student pursuing B.Tech in Electronics and Communication Engineering at CUSAT.
+                        My main interests are C programming, tech innovation, and problem-solving. I'm focused on learning
+                        and applying my skills in real-world projects.</p>
                 </section>
             </div>
+
             <div class="column">
                 <section>
-                    <h2>Education</h2>
-                    <p class="section-content"><strong>2009 - 2021:</strong> Completed 10th grade from Carmel HSS, Ex-Carmelite</p>
-                    <p class="section-content"><strong>2021 - 2023:</strong> Completed 12th grade from St. Joseph's, Ex-Josephite</p>
-                    <p class="section-content"><strong>2024 - Present:</strong> B.Tech in Electronics and Communication Engineering, CUSAT, Kochi</p>
+                    <h2 class="section-title">Education</h2>
+                    <ul>
+                        <li><strong>2009 - 2021:</strong> 10th Grade, Carmel HSS</li>
+                        <li><strong>2021 - 2023:</strong> 12th Grade, St. Joseph's</li>
+                        <li><strong>2024 - Present:</strong> B.Tech in Electronics and Communication Engineering, CUSAT</li>
+                    </ul>
                 </section>
             </div>
         </div>
@@ -229,29 +249,26 @@
         <div class="row">
             <div class="column">
                 <section>
-                    <h2>Skills</h2>
-                    <div class="section-content">
-                        <ul>
-                            <li>C Programming - Completed course from GTech Institute</li>
-                            <li>C++ Programming - Completed course from GTech Institute</li>
-                            <li>AI - Completed GEN101 AI course with the help of Pieces AI</li>
-                            <li>Embedded Systems</li>
-                            <li>Problem Solving</li>
-                            <li>Data Structures and Algorithms</li>
-                        </ul>
-                    </div>
+                    <h2 class="section-title">Skills</h2>
+                    <ul>
+                        <li>C Programming</li>
+                        <li>C++ Programming</li>
+                        <li>AI (GEN101 Course)</li>
+                        <li>Embedded Systems</li>
+                        <li>Problem Solving</li>
+                        <li>Data Structures & Algorithms</li>
+                    </ul>
                 </section>
             </div>
+
             <div class="column">
                 <section>
-                    <h2>Projects</h2>
-                    <div class="section-content">
-                        <ul>
-                            <li><strong>BMS in C:</strong> A basic Bank Management System project developed in C.</li>
-                            <li><strong>BMI Calculator:</strong> A simple Body Mass Index (BMI) calculator developed in C.</li>
-                            <li><strong>GitHub Projects:</strong> Continuously working on various projects, available on my GitHub profile.</li>
-                        </ul>
-                    </div>
+                    <h2 class="section-title">Projects</h2>
+                    <ul>
+                        <li><strong>BMS in C:</strong> A basic Bank Management System project developed in C.</li>
+                        <li><strong>BMI Calculator:</strong> A Body Mass Index calculator developed in C.</li>
+                        <li><strong>GitHub Projects:</strong> Continuously working on various projects available on my GitHub.</li>
+                    </ul>
                 </section>
             </div>
         </div>
@@ -259,13 +276,14 @@
         <div class="row">
             <div class="column">
                 <section>
-                    <h2>Contact</h2>
-                    <p class="section-content">Email: <a href="mailto:nrkollikkara@gmail.com" style="color: #FF6347;">nrkollikkara@gmail.com</a></p>
+                    <h2 class="section-title">Contact</h2>
+                    <p>Email: <a href="mailto:nrkollikkara@gmail.com">nrkollikkara@gmail.com</a></p>
                 </section>
             </div>
+
             <div class="column">
                 <section>
-                    <h2>Social Links</h2>
+                    <h2 class="section-title">Social Links</h2>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/niranjan-r-kollikkara-6ab810327/" target="_blank">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/LinkedIn_logo_In-Red.png/640px-LinkedIn_logo_In-Red.png" alt="LinkedIn">
@@ -283,6 +301,13 @@
                 </section>
             </div>
         </div>
+
+        <footer>
+            <p>Designed by Niranjan K R | <a href="mailto:nrkollikkara@gmail.com">Contact Me</a></p>
+        </footer>
+
     </div>
+
 </body>
+
 </html>
