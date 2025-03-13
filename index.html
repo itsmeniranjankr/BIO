@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niranjan K R - Engineer & Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #FFD700; /* Gold */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+        }
+        .linkedin { background: linear-gradient(45deg, #0077b5, #004471); color: white; }
+        .github { background: linear-gradient(45deg, #333, #000); color: white; }
+        .instagram { background: linear-gradient(45deg, #e4405f, #ff8a00); color: white; }
+        .links a:hover { transform: scale(1.1); box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+        
+        /* Form Styling */
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #ffcc00; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Niranjan K R</h1>
+        <p>Electronics Engineer | AI Innovator | Developer Extraordinaire</p>
+        <div class="links">
+            <a class="linkedin" href="https://www.linkedin.com/in/niranjan-r-kollikkara-6ab810327" target="_blank">LinkedIn</a>
+            <a class="github" href="https://github.com/itsmeniranjankr" target="_blank">GitHub</a>
+            <a class="instagram" href="https://www.instagram.com/its_niranjan_kr/" target="_blank">Instagram</a>
+        </div>
+    </div>
+
+    <!-- Form to Ask for User's Name -->
+    <div class="form-container">
+        <h2>Hey, what's your name?</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <button onclick="saveName()">Submit</button>
+        <p id="responseMsg"></p>
+    </div>
+
+    <script>
+        function saveName() {
+            var name = document.getElementById("nameInput").value;
+            if (!name) {
+                alert("Please enter your name!");
+                return;
+            }
+            
+            fetch("YOUR_GOOGLE_APPS_SCRIPT_URL", {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: name })
+            }).then(() => {
+                document.getElementById("responseMsg").innerText = "Thanks, " + name + "! Your name is saved!";
+            }).catch(error => console.log(error));
+        }
+    </script>
+
+</body>
+</html>
