@@ -19,21 +19,18 @@
             background-color: #1a1a1a;
             color: #fff;
             line-height: 1.6;
-            overflow: hidden;
         }
 
         .container {
-            width: 80%;
+            width: 90%;
             max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 50px;
+            margin: auto;
+            padding: 20px 10px;
         }
 
         /* Intro Screen */
         .intro-screen {
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             display: flex;
@@ -41,168 +38,107 @@
             align-items: center;
             background-color: #333;
             z-index: 1000;
-            overflow: hidden;
-            transform: scale(1); /* Initially full size */
-            transition: transform 1s ease-out, width 1s ease-out; /* Curtain effect */
-        }
-
-        .intro-screen .curtain-left,
-        .intro-screen .curtain-right {
-            position: absolute;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            background-color: #333;
-            z-index: 10;
-            transition: width 1s ease-out;
-        }
-
-        .intro-screen .curtain-left {
-            left: 0;
-            transform-origin: left center;
-        }
-
-        .intro-screen .curtain-right {
-            right: 0;
-            transform-origin: right center;
+            transition: transform 1s ease-out;
         }
 
         .intro-screen h1 {
-            font-size: 80px;
+            font-size: clamp(40px, 8vw, 80px);
             font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 10px;
+            letter-spacing: 5px;
+            color: white;
         }
 
-        /* Header styling */
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(135deg, #4caf50, #2196f3); /* Green to Blue gradient */
-            color: #fff;
-            padding: 30px 40px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #4caf50, #2196f3);
+            color: white;
+            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         header .left {
-            flex-basis: 60%;
+            flex: 1;
         }
 
-        header .left h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #fff; /* White for Niranjan K R */
-        }
-
-        header .left p {
-            font-size: 18px;
-            font-weight: 400;
-        }
-
-        header .right {
-            text-align: right;
+        header h1 {
+            font-size: clamp(28px, 5vw, 42px);
         }
 
         header .right img {
-            width: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 3px solid white;
         }
 
-        .section-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 3px solid #ffffff;
-            padding-bottom: 8px;
-            background: linear-gradient(135deg, #4caf50, #2196f3); /* Gradient for section titles */
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
+        /* Responsive Grid */
         .row {
             display: flex;
-            gap: 30px;
-            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .column {
             flex: 1;
-            background-color: #333;
+            min-width: 300px;
+            background: #333;
+            padding: 20px;
             border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .column:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .column ul {
-            list-style-type: none;
-        }
-
-        .column ul li {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .column ul li strong {
-            color: #4caf50; /* Green color for strong text */
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #4caf50, #2196f3);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         .social-links {
             display: flex;
-            gap: 20px;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
         .social-links a {
-            width: 45px;
-            height: 45px;
-            background-color: #333;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            background-color: #444;
+            transition: 0.3s;
         }
 
         .social-links a:hover {
-            background-color: #4caf50; /* Green color on hover */
-            transform: scale(1.1);
+            background-color: #4caf50;
         }
 
-        .social-links a img {
-            width: 22px;
-            height: 22px;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover img {
-            transform: scale(1.2);
+        .social-links img {
+            width: 20px;
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
             font-size: 14px;
             color: #bbb;
+            margin-top: 40px;
         }
 
         footer a {
-            color: #4caf50; /* Green for footer links */
+            color: #4caf50;
             text-decoration: none;
         }
 
@@ -210,47 +146,24 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 1024px) {
-            .container {
-                width: 90%;
-            }
-
-            header .left h1 {
-                font-size: 36px;
-            }
-
-            .row {
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
                 flex-direction: column;
             }
 
-            .column {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header .left h1 {
-                font-size: 32px;
-            }
-
-            header .left p {
-                font-size: 16px;
+            header .right {
+                margin-top: 10px;
             }
 
             .social-links {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
             }
         }
 
         @media (max-width: 480px) {
-            header .left h1 {
-                font-size: 28px;
-            }
-
-            .social-links a {
-                width: 40px;
-                height: 40px;
+            .social-links {
+                flex-direction: column;
             }
 
             .column {
@@ -262,15 +175,11 @@
 
 <body>
 
-    <!-- Intro Screen -->
     <div class="intro-screen">
-        <div class="curtain-left"></div>
-        <div class="curtain-right"></div>
         <h1>NIRANJAN</h1>
     </div>
 
     <div class="container">
-
         <header>
             <div class="left">
                 <h1>Niranjan K R</h1>
@@ -278,9 +187,7 @@
                 <p>Cochin University of Science and Technology (CUSAT), Kochi</p>
             </div>
             <div class="right">
-                <a href="https://freeimage.host/i/3dnjgxs" target="_blank">
-                    <img src="https://iili.io/3dnjgxs.th.jpg" alt="Niranjan K R">
-                </a>
+                <img src="https://iili.io/3dnjgxs.th.jpg" alt="Niranjan K R">
             </div>
         </header>
 
@@ -316,7 +223,6 @@
                         <li>AI (GEN101 Course)</li>
                         <li>Embedded Systems</li>
                         <li>Problem Solving</li>
-                        <li>Data Structures & Algorithms</li>
                     </ul>
                 </section>
             </div>
@@ -327,7 +233,7 @@
                     <ul>
                         <li><strong>BMS in C:</strong> A basic Bank Management System project developed in C.</li>
                         <li><strong>BMI Calculator:</strong> A Body Mass Index calculator developed in C.</li>
-                        <li><strong>GitHub Projects:</strong> Continuously working on various projects available on my GitHub.</li>
+                        <li><strong>GitHub Projects:</strong> Available on my GitHub.</li>
                     </ul>
                 </section>
             </div>
@@ -345,18 +251,8 @@
                 <section>
                     <h2 class="section-title">Social Links</h2>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/niranjan-r-kollikkara-6ab810327/" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/LinkedIn_logo_In-Red.png/640px-LinkedIn_logo_In-Red.png" alt="LinkedIn">
-                        </a>
-                        <a href="https://github.com/itsmeniranjankr" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="GitHub">
-                        </a>
-                        <a href="https://www.instagram.com/its_niranjan_kr/" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-                        </a>
-                        <a href="https://x.com/hisnameisnira" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Twitter_X.png/640px-Twitter_X.png" alt="Twitter">
-                        </a>
+                        <a href="https://github.com/itsmeniranjankr"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"></a>
+                        <a href="https://x.com/hisnameisnira"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Twitter_X.png"></a>
                     </div>
                 </section>
             </div>
@@ -365,28 +261,13 @@
         <footer>
             <p>Designed by Niranjan K R | <a href="mailto:nrkollikkara@gmail.com">Contact Me</a></p>
         </footer>
-
     </div>
 
     <script>
-        // Hide the intro screen with a curtain effect after 5 seconds
         setTimeout(() => {
-            const curtainLeft = document.querySelector('.curtain-left');
-            const curtainRight = document.querySelector('.curtain-right');
-            const introScreen = document.querySelector('.intro-screen');
-
-            // Start the curtain effect by expanding the left and right curtains
-            curtainLeft.style.width = '10%';
-            curtainRight.style.width = '10%';
-
-            // After the transition, hide the intro screen entirely
-            setTimeout(() => {
-                introScreen.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Allow scrolling after intro
-            }, 2000); // Matches the duration of the transition
-        }, 200); // Fade after 5 seconds (slower intro duration)
+            document.querySelector('.intro-screen').style.display = 'none';
+        }, 1500);
     </script>
 
 </body>
-
 </html>
